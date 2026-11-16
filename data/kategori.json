@@ -1,0 +1,32 @@
+[
+    {
+        "id": "KAT-001",
+        "nama": "Elektronik",
+        "deskripsi": "Laptop, HP, charger, flashdisk, mouse, powerbank, earphone",
+        "created_at": "2026-11-16 17:10:48"
+    },
+    {
+        "id": "KAT-002",
+        "nama": "Dokumen",
+        "deskripsi": "KTM, KTP, SIM, STNK, buku tabungan, berkas ijazah\/sertifikat",
+        "created_at": "2026-11-16 17:10:48"
+    },
+    {
+        "id": "KAT-003",
+        "nama": "Aksesoris",
+        "deskripsi": "Jam tangan, kacamata, helm, perhiasan, topi, payung",
+        "created_at": "2026-11-16 17:10:48"
+    },
+    {
+        "id": "KAT-004",
+        "nama": "Pakaian",
+        "deskripsi": "Jaket, jas almamater, sweater, hoodie, syal, sepatu",
+        "created_at": "2026-11-16 17:10:48"
+    },
+    {
+        "id": "KAT-005",
+        "nama": "Lainnya",
+        "deskripsi": "Kunci motor\/mobil, tas ransel, botol minum\/tumbler, binder",
+        "created_at": "2026-11-16 17:10:48"
+    }
+]

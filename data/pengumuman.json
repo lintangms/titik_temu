@@ -1,0 +1,32 @@
+[
+    {
+        "id": "PGM-003",
+        "judul": "Himbauan Menjaga Barang Bawaan di Area Perpustakaan",
+        "tgl_buat": "2026-09-20",
+        "tgl_publikasi": "2026-09-22",
+        "status": "Draft",
+        "penulis": "Satpam Kampus",
+        "isi": "Dihimbau kepada seluruh civitas akademika agar tidak meninggalkan laptop, dompet, atau gadget di atas meja belajar perpustakaan tanpa pengawasan.",
+        "created_at": "2026-11-16 17:10:48"
+    },
+    {
+        "id": "PGM-002",
+        "judul": "Prosedur Pengambilan Barang Temuan di Pos Satpam",
+        "tgl_buat": "2026-09-24",
+        "tgl_publikasi": "2026-09-25",
+        "status": "Terbit",
+        "penulis": "Pos Satpam Pusat",
+        "isi": "Pengambilan barang temuan dilayani setiap hari Senin - Jumat pukul 08.00 - 16.00 WIB. Pemilik wajib membawa kartu identitas\/KTM serta dapat menjelaskan ciri khusus barang.",
+        "created_at": "2026-11-16 17:10:48"
+    },
+    {
+        "id": "PGM-001",
+        "judul": "Penemuan Kunci Motor Vario di Parkiran F",
+        "tgl_buat": "2026-09-28",
+        "tgl_publikasi": "2026-09-28",
+        "status": "Terbit",
+        "penulis": "Bambang (Satpam)",
+        "isi": "Ditemukan 1 set kunci motor Honda Vario dengan gantungan boneka biru di parkiran motor barat. Pemilik dapat mengambilnya di Pos Satpam Utama dengan membawa bukti STNK.",
+        "created_at": "2026-11-16 17:10:48"
+    }
+]
