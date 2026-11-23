@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "username": "satpam",
+        "password": "$2y$10$mO7gYWZFBB1vMlxMArjn2efTNmPaY8m0Y2UoUOt7svO3v.9iI4l6a",
+        "nama": "Bambang Sutrisno",
+        "role": "Satpam",
+        "identitas": "NIP: 198207152008121002",
+        "kontak": "0856-7890-1234",
+        "foto": "avatar_satpam_1791211451.jpeg",
+        "created_at": "2026-10-19 15:38:43"
+    },
+    {
+        "id": 2,
+        "username": "mahasiswa",
+        "password": "$2y$10$PhStJ8jNnnx5VQ6E91FD8eMggROvWsiNEYNxLNtPJaFsqoB1Hndnu",
+        "nama": "Lintang Arya Nugraha",
+        "role": "Mahasiswa",
+        "identitas": "NIM: 24050123001",
+        "kontak": "0812-3456-7890",
+        "foto": null,
+        "created_at": "2026-10-19 15:38:43"
+    },
+    {
+        "id": 3,
+        "username": "rifkuy",
+        "password": "$2y$10$BxQ.PrMUXcI8R03hGCIh3.p\/XNLby1KS.KXo4O1ThacdzzzPdj3Wu",
+        "nama": "rifky",
+        "role": "Mahasiswa",
+        "identitas": "2551",
+        "kontak": "09123",
+        "foto": null,
+        "created_at": "2026-10-19 16:00:43"
+    }
+]

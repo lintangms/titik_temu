@@ -1,0 +1,50 @@
+[
+    {
+        "id": "BRG-004",
+        "nama": "Jaket Hoodie Hitam Polos",
+        "kategori": "Pakaian",
+        "status": "Sudah Dikembalikan",
+        "lokasi": "Perpustakaan Pusat",
+        "tanggal": "2026-09-25",
+        "deskripsi": "Tertinggal di kursi baca perpus, sudah diambil kembali oleh pemiliknya.",
+        "pelapor": "Petugas Perpus",
+        "kontak": "087890123456",
+        "created_at": "2026-11-16 17:10:48"
+    },
+    {
+        "id": "BRG-003",
+        "nama": "Kalkulator Casio fx-991EX",
+        "kategori": "Elektronik",
+        "status": "Hilang",
+        "lokasi": "Lab Komputer Terpadu",
+        "tanggal": "2026-09-26",
+        "deskripsi": "Kalkulator tertinggal setelah jam praktikum, ada stiker biru di cover belakang.",
+        "pelapor": "Rina Sasmita",
+        "kontak": "082345678901",
+        "created_at": "2026-11-16 17:10:48"
+    },
+    {
+        "id": "BRG-002",
+        "nama": "Helm KYT Fullface Abu-abu",
+        "kategori": "Aksesoris",
+        "status": "Ditemukan",
+        "lokasi": "Parkiran Motor Gedung F",
+        "tanggal": "2026-09-28",
+        "deskripsi": "Ditemukan di atas spion motor Beat, diamankan di pos satpam.",
+        "pelapor": "Pak Bambang (Satpam)",
+        "kontak": "085678901234",
+        "created_at": "2026-11-16 17:10:48"
+    },
+    {
+        "id": "BRG-001",
+        "nama": "KTM & Dompet Hitam Kulit",
+        "kategori": "Dokumen",
+        "status": "Hilang",
+        "lokasi": "Gedung Kuliah Bersama (GKB)",
+        "tanggal": "2026-09-27",
+        "deskripsi": "Dompet lipat warna hitam merk Baellerry berisi KTM atas nama Lintang Arya.",
+        "pelapor": "Lintang Arya",
+        "kontak": "081234567890",
+        "created_at": "2026-11-16 17:10:48"
+    }
+]

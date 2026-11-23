@@ -1,27 +1,16 @@
 <?php
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ * Root gateway for local development / Apache subfolder setups
+ */
+
+$uri = urldecode(
+    parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? ''
+);
+
+if (php_sapi_name() === 'cli-server' && $uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
+    return false;
 }
 
-if (!isset($_SESSION['user']) && isset($_COOKIE['titiktemu_session'])) {
-    $cookieData = json_decode($_COOKIE['titiktemu_session'], true);
-    if ($cookieData && isset($cookieData['username'])) {
-        $_SESSION['user'] = $cookieData;
-    }
-}
-
-if (isset($_SESSION['user']) && !empty($_SESSION['user']['username'])) {
-    if ($_SESSION['user']['role'] === 'Satpam') {
-        header('Location: dashboard.php');
-    } else {
-        header('Location: mahasiswa.php');
-    }
-    exit();
-} else {
-    header('Location: login.php');
-    exit();
-}
+require_once __DIR__.'/public/index.php';

@@ -1,0 +1,101 @@
+/* ==========================================================================
+   AUTHENTICATION PAGES (Login & Register - Simple & Tenang)
+   ========================================================================== */
+
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px 16px;
+    background-color: var(--slate-100);
+}
+
+.login-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 32px 28px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--slate-200);
+    box-shadow: var(--shadow-sm);
+    animation: slideUp 0.2s ease-out;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 4px;
+}
+
+.header p {
+    font-size: 13px;
+    color: var(--slate-500);
+    line-height: 1.4;
+}
+
+/* Submit Button */
+.btn-login {
+    width: 100%;
+    padding: 10px 16px;
+    background-color: var(--primary-main);
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 600;
+    border: 1px solid var(--primary-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    margin-top: 8px;
+    transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-xs);
+}
+
+.btn-login:hover {
+    background-color: var(--primary-hover);
+    color: #ffffff;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 12.5px;
+    color: var(--slate-600);
+}
+
+.auth-link a {
+    color: var(--primary-main);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: var(--transition-fast);
+}
+
+.auth-link a:hover {
+    color: var(--primary-hover);
+}
+
+.info-akun {
+    margin-top: 20px;
+    padding: 12px 14px;
+    background-color: var(--slate-50);
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    color: var(--slate-600);
+    line-height: 1.5;
+}
+
+.info-akun .info-title {
+    font-weight: 600;
+    color: var(--slate-800);
+    margin-bottom: 4px;
+}
