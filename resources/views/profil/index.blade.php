@@ -55,4 +55,41 @@
         </div>
     </form>
 </div>
+
+<!-- Zona Bahaya: Hapus Akun Sendiri -->
+<div class="content-card" style="max-width: 680px; margin-top: 20px; border-color: #fecaca; background: #fff5f5;">
+    <div class="content-card-header" style="border-bottom: 1px solid #fee2e2; margin-bottom: 12px; padding-bottom: 8px;">
+        <h3 style="color: #b91c1c; font-size: 15px; font-weight: 700;">Zona Bahaya: Hapus Akun</h3>
+    </div>
+    <p style="font-size: 13px; color: var(--slate-700); margin-bottom: 14px; line-height: 1.5;">
+        Tindakan ini akan menghapus data akun profil Anda secara permanen dari sistem. Anda akan otomatis logout dan tidak dapat mengakses sistem dengan akun ini lagi.
+    </p>
+    <button type="button" class="btn-danger" onclick="bukaModal('modal-hapus-akun')">Hapus Akun Saya</button>
+</div>
+
+<!-- Modal Konfirmasi Hapus Akun -->
+<div class="modal hidden" id="modal-hapus-akun">
+    <div class="modal-content" style="max-width: 460px;">
+        <div class="modal-header">
+            <h3 style="color: #b91c1c;">Konfirmasi Hapus Akun</h3>
+            <button type="button" class="btn-close" onclick="tutupModal('modal-hapus-akun')">&times;</button>
+        </div>
+        <form method="POST" action="{{ route('profil.destroy.post') }}">
+            @csrf
+            <p style="font-size: 13.5px; color: var(--slate-700); margin-bottom: 14px;">
+                Apakah Anda yakin ingin menghapus akun <strong>{{ $user->username }}</strong> ({{ $user->nama }})?
+            </p>
+            <div class="alert alert-danger" style="font-size: 12.5px; margin-bottom: 14px;">
+                Untuk mencegah tindakan tidak sengaja, silakan ketik kata <strong>HAPUS</strong> di bawah ini untuk konfirmasi:
+            </div>
+            <div class="form-group">
+                <input type="text" name="konfirmasi_teks" placeholder="Ketik HAPUS" required autocomplete="off">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="tutupModal('modal-hapus-akun')">Batal</button>
+                <button type="submit" class="btn-danger">Hapus Akun Permanen</button>
+            </div>
+        </form>
+    </div>
+</div>
 @endsection

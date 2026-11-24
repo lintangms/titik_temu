@@ -38,6 +38,8 @@ Route::match(['get', 'post'], '/logout', [AuthController::class, 'logout'])->nam
 Route::middleware('auth')->group(function () {
     Route::get('/profil', [AuthController::class, 'profile'])->name('profil.index');
     Route::post('/profil', [AuthController::class, 'updateProfile'])->name('profil.update');
+    Route::delete('/profil', [AuthController::class, 'destroyProfile'])->name('profil.destroy');
+    Route::post('/profil/hapus', [AuthController::class, 'destroyProfile'])->name('profil.destroy.post');
 });
 
 // Satpam / Petugas Portal (CRUD Admin)

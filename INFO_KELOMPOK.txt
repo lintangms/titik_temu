@@ -1,0 +1,120 @@
+================================================================================
+INFORMASI PENGUMPULAN TUGAS AKHIR APLIKASI WEB - SISTEM INFORMASI TITIKTEMU
+Mata Kuliah : Pemrograman Web
+Projek      : TitikTemu (Sistem Informasi Pencarian dan Penemuan Barang Hilang)
+Framework   : Laravel 12 (PHP 8.2+) / Model-View-Controller (MVC)
+Database    : MySQL (MariaDB XAMPP)
+================================================================================
+
+1. DAFTAR ANGGOTA KELOMPOK & PEMBAGIAN MODUL CRUD
+--------------------------------------------------------------------------------
+1. Nama       : Lintang Arya Nugraha
+   NIM        : 24050123001
+   Peran      : Ketua Tim / Pengembang Fitur Individu Utama
+   Modul CRUD : Modul Inti Kelola Data Barang (/barang)
+                - Create : Tambah laporan barang hilang / temuan dengan validasi ketat
+                - Read   : Menampilkan tabel data, pencarian langsung & modal detail
+                - Update : Ubah status barang (Hilang/Ditemukan/Sudah Dikembalikan) & deskripsi
+                - Delete : Hapus data barang dengan modal konfirmasi interaktif
+
+2. Nama       : Anggota 2
+   NIM        : [NIM Anggota 2]
+   Peran      : Pengembang Modul Kategori
+   Modul CRUD : Modul Master Kategori Barang (/kategori)
+                - Create : Tambah kategori barang baru dengan ID otomatis (KAT-xxx)
+                - Read   : Daftar kategori & contoh jenis barang
+                - Update : Edit nama dan deskripsi kategori
+                - Delete : Hapus kategori dengan dialog konfirmasi
+
+3. Nama       : Anggota 3
+   NIM        : [NIM Anggota 3]
+   Peran      : Pengembang Modul Lokasi
+   Modul CRUD : Modul Master Lokasi Kampus (/lokasi)
+                - Create : Tambah titik lokasi kampus (LOK-xxx)
+                - Read   : Daftar lokasi, area gedung & keterangan
+                - Update : Ubah informasi lokasi dan area
+                - Delete : Hapus lokasi dengan dialog konfirmasi
+
+4. Nama       : Anggota 4
+   NIM        : [NIM Anggota 4]
+   Peran      : Pengembang Modul Pengumuman
+   Modul CRUD : Modul Publikasi Pengumuman (/pengumuman)
+                - Create : Buat rilis pengumuman penemuan barang (PGM-xxx)
+                - Read   : Daftar pengumuman dengan status Draft / Terbit
+                - Update : Edit isi pengumuman dan jadwal publikasi
+                - Delete : Hapus pengumuman dengan konfirmasi
+
+5. Nama       : Anggota 5
+   NIM        : [NIM Anggota 5]
+   Peran      : Pengembang Modul Serah Terima
+   Modul CRUD : Modul Berita Acara Serah Terima (/serah-terima)
+                - Create : Catat serah terima pengembalian barang (STR-xxx)
+                - Read   : Riwayat penyerahan barang dan data penerima
+                - Update : Perbarui status penyerahan (Menunggu / Selesai)
+                - Delete : Hapus riwayat serah terima dengan konfirmasi
+
+*(Catatan: Silakan sesuaikan Nama dan NIM anggota 2 - 5 sesuai data kelompok Anda)*
+
+
+2. INFORMASI BASIS DATA (DATABASE)
+--------------------------------------------------------------------------------
+- Database Engine : MySQL / MariaDB (Port 3306)
+- Nama Database   : titiktemu_laravel (tersedia juga fallback titiktemu)
+- File SQL Dump   : database.sql (sudah disertakan di root direktori)
+- Konfigurasi .env:
+  DB_CONNECTION = mysql
+  DB_HOST       = 127.0.0.1
+  DB_PORT       = 3306
+  DB_DATABASE   = titiktemu_laravel
+  DB_USERNAME   = root
+  DB_PASSWORD   = 
+
+Langkah Migrasi & Seeder Database (Kondisi Baru):
+$ php artisan migrate --seed
+(atau langsung import file database.sql ke phpMyAdmin)
+
+
+3. KREDENSIAL AKUN PENGUJIAN (TESTING ACCOUNTS)
+--------------------------------------------------------------------------------
+A. Akun Satpam / Petugas (Admin - Akses CRUD Penuh):
+   - Username : satpam
+   - Password : satpam123
+   - Role     : Satpam
+   - Hak Akses: Kelola Dashboard Statistik, Data Barang, Kategori, Lokasi,
+                Pengumuman, Berita Acara Serah Terima, dan Profil.
+
+B. Akun Mahasiswa (Civitas Akademika / Pelapor):
+   - Username : mahasiswa
+   - Password : mhs123
+   - Role     : Mahasiswa
+   - Hak Akses: Melihat Pengumuman Terbit, Pencarian Katalog Barang Hilang/Temuan,
+                Kirim Laporan Kehilangan Baru, dan Kelola/Hapus Profil Sendiri.
+
+
+4. TAUTAN / URL APLIKASI
+--------------------------------------------------------------------------------
+- URL Server Lokal XAMPP : http://localhost/KULIAH/titik_temu/
+- URL Login XAMPP        : http://localhost/KULIAH/titik_temu/login
+- URL Artisan CLI        : http://127.0.0.1:8000/
+- URL Hosting Daring     : [Tautan Hosting jika diunggah online, misal InfinityFree]
+
+
+5. FITUR WAJIB & ASPEK KEAMANAN
+--------------------------------------------------------------------------------
+1. Autentikasi & Registrasi :
+   - Validasi kredensial aman & hash bcrypt.
+   - Registrasi pengguna baru dengan validasi username unik dan konfirmasi password.
+2. Manajemen Profil :
+   - Melihat, mengubah profil, ganti password, dan HAPUS AKUN SENDIRI (Zona Bahaya).
+3. Keamanan Halaman (Anti-Bypass & Anti-Back) :
+   - Middleware auth & role mencegah akses URL tanpa login.
+   - Header Cache-Control: no-cache, no-store, must-revalidate + listener pageshow
+     mencegah akses kembali via tombol Back setelah logout.
+4. Keamanan SQL Injection & XSS :
+   - Menggunakan Eloquent ORM & PDO Prepared Statements parameter binding.
+   - Proteksi XSS otomatis melalui Blade template engine (htmlspecialchars).
+5. Desain Responsif & Tema Identitas :
+   - Warna Biru Gelap Universitas Brawijaya (UB Dark Blue: #003366).
+   - Tombol aksi CRUD menggunakan ikon SVG minimalis (Detail, Edit, Hapus).
+   - Tampilan adaptif pada desktop, tablet, maupun layar mobile (hamburger menu).
+================================================================================

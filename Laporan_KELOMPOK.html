@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Laporan Penjelasan Fitur Aplikasi - TitikTemu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            margin: 40px;
+            font-size: 13.5px;
+        }
+        h1, h2, h3, h4 {
+            color: #003366;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        h1 {
+            font-size: 22px;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .meta-box {
+            background: #f1f5f9;
+            border-left: 4px solid #003366;
+            padding: 12px 18px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .member-card {
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            background: #ffffff;
+            page-break-inside: avoid;
+        }
+        .member-header {
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            margin: -16px -20px 14px -20px;
+            padding: 10px 20px;
+            font-weight: bold;
+            color: #0f172a;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 12.5px;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background: #f8fafc;
+            color: #334155;
+        }
+        .flow-box {
+            background: #f8fafc;
+            border: 1px dashed #94a3b8;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 11.5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOKUMEN PENJELASAN FITUR APLIKASI KELOMPOK</h1>
+    <div class="meta-box">
+        <strong>Mata Kuliah:</strong> Pemrograman Web<br>
+        <strong>Aplikasi:</strong> Sistem Informasi Pencarian dan Penemuan Barang Hilang (TitikTemu)<br>
+        <strong>Arsitektur:</strong> Laravel 12 (Model-View-Controller) &amp; Basis Data MySQL
+    </div>
+
+    <h2>1. PENJELASAN FITUR INDIVIDU MASING-MASING ANGGOTA</h2>
+
+    <!-- Anggota 1 -->
+    <div class="member-card">
+        <div class="member-header">
+            ANGGOTA 1: Lintang Arya Nugraha (NIM: 24050123001) &mdash; Modul Utama Kelola Data Barang
+        </div>
+        <p><strong>A. Peran Fitur dalam Aplikasi Secara Keseluruhan:</strong><br>
+        Modul Kelola Data Barang (<code>/barang</code>) merupakan jantung dan mesin utama (<em>core hub</em>) aplikasi TitikTemu. Modul ini menampung seluruh siklus data barang dari civitas akademika kampus, mengelola perubahan status barang (Hilang &rarr; Ditemukan &rarr; Sudah Dikembalikan), menyuplai metrik statistik ke dashboard secara realtime, dan menjadi data referensi pembuatan berita acara serah terima.</p>
+        
+        <p><strong>B. Alur Kerja Fitur (Frontend &rarr; Backend &rarr; Database):</strong></p>
+        <div class="flow-box">
+            [Frontend: Blade View &amp; Modal Form] &rarr; (HTTP POST /barang) &rarr; [Backend: BarangController@store &amp; Validasi] &rarr; [Database: Eloquent INSERT INTO barang]
+        </div>
+        <ul>
+            <li><strong>Frontend (Tampilan):</strong> Pengguna membuka modal interaktif <code>#modal-form</code> untuk tambah/edit data, melihat seluruh detail barang pada <code>#modal-detail</code>, serta konfirmasi hapus melalui <code>#modal-hapus-barang</code> dengan tombol berikon SVG minimalis.</li>
+            <li><strong>Proses Server (Backend):</strong> Dilindungi middleware autentikasi dan otorisasi role Satpam. Input divalidasi ketat (nama minimal 3 karakter, verifikasi kategori dan lokasi terdaftar, tanggal wajar 2000-sekarang, dan nomor HP valid). ID unik berformat <code>BRG-001</code> di-generate secara otomatis.</li>
+            <li><strong>Penyimpanan Database:</strong> Data disimpan ke tabel <code>barang</code> melalui Eloquent ORM dengan prepared statements sehingga terlindung dari SQL Injection.</li>
+        </ul>
+    </div>
+
+    <!-- Anggota 2 -->
+    <div class="member-card">
+        <div class="member-header">
+            ANGGOTA 2: [Nama Anggota 2] (NIM: [NIM Anggota 2]) &mdash; Modul Master Kategori Barang
+        </div>
+        <p><strong>A. Peran Fitur dalam Aplikasi Secara Keseluruhan:</strong><br>
+        Modul Kategori Barang (<code>/kategori</code>) berfungsi sebagai master data pengelompokan jenis barang temuan dan kehilangan (Elektronik, Dokumen, Aksesoris, Pakaian, Lainnya) agar laporan terstandarisasi dan memudahkan filtering pencarian.</p>
+        <p><strong>B. Alur Kerja Fitur:</strong></p>
+        <ul>
+            <li><strong>Frontend:</strong> Menampilkan tabel master kategori dengan toolbar pencarian instan dan modal form tambah/edit.</li>
+            <li><strong>Backend (KategoriController):</strong> Memvalidasi nama kategori dan deskripsi contoh barang, kemudian men-generate kode <code>KAT-xxx</code> secara terurut.</li>
+            <li><strong>Database:</strong> Menyimpan record ke tabel <code>kategori</code> dan terintegrasi sebagai pilihan dropdown pada form pelaporan barang.</li>
+        </ul>
+    </div>
+
+    <!-- Anggota 3 -->
+    <div class="member-card">
+        <div class="member-header">
+            ANGGOTA 3: [Nama Anggota 3] (NIM: [NIM Anggota 3]) &mdash; Modul Master Lokasi Kampus
+        </div>
+        <p><strong>A. Peran Fitur dalam Aplikasi Secara Keseluruhan:</strong><br>
+        Modul Lokasi (<code>/lokasi</code>) memetakan titik-titik lokasi di lingkungan universitas (GKB, Perpustakaan, Lab Komputer, Parkiran, Kantin) untuk memastikan kejelasan area penemuan dan penelusuran barang.</p>
+        <p><strong>B. Alur Kerja Fitur:</strong></p>
+        <ul>
+            <li><strong>Frontend:</strong> Tabel interaktif lokasi dengan tombol edit dan hapus berikon SVG.</li>
+            <li><strong>Backend (LokasiController):</strong> Memvalidasi kelengkapan nama lokasi, area gedung, dan keterangan. Kode <code>LOK-xxx</code> dihasilkan otomatis.</li>
+            <li><strong>Database:</strong> Record tersimpan di tabel <code>lokasi</code> yang tersinkronisasi sebagai referensi lokasi pada formulir barang.</li>
+        </ul>
+    </div>
+
+    <!-- Anggota 4 -->
+    <div class="member-card">
+        <div class="member-header">
+            ANGGOTA 4: [Nama Anggota 4] (NIM: [NIM Anggota 4]) &mdash; Modul Pengumuman Kampus
+        </div>
+        <p><strong>A. Peran Fitur dalam Aplikasi Secara Keseluruhan:</strong><br>
+        Modul Pengumuman (<code>/pengumuman</code>) memungkinkan petugas Satpam merilis pengumuman penting mengenai barang temuan berharga agar dapat segera dibaca oleh mahasiswa di portal publik.</p>
+        <p><strong>B. Alur Kerja Fitur:</strong></p>
+        <ul>
+            <li><strong>Frontend:</strong> Pengelolaan daftar rilis dengan status Draft dan Terbit. Pada sisi mahasiswa, pengumuman terbit tampil sebagai kartu informasi ringkas.</li>
+            <li><strong>Backend (PengumumanController):</strong> Mengatur penjadwalan tanggal publikasi, nama penulis, serta status terbit.</li>
+            <li><strong>Database:</strong> Tersimpan pada tabel <code>pengumuman</code> dengan primary key <code>PGM-xxx</code>.</li>
+        </ul>
+    </div>
+
+    <!-- Anggota 5 -->
+    <div class="member-card">
+        <div class="member-header">
+            ANGGOTA 5: [Nama Anggota 5] (NIM: [NIM Anggota 5]) &mdash; Modul Berita Acara Serah Terima
+        </div>
+        <p><strong>A. Peran Fitur dalam Aplikasi Secara Keseluruhan:</strong><br>
+        Modul Serah Terima (<code>/serah-terima</code>) mendokumentasikan proses pengembalian barang kepada pemilik aslinya. Modul ini menjadi bukti legalitas dan secara otomatis memperbarui status barang terkait menjadi "Sudah Dikembalikan".</p>
+        <p><strong>B. Alur Kerja Fitur:</strong></p>
+        <ul>
+            <li><strong>Frontend:</strong> Formulir berita acara yang memilih referensi barang temuan, mencatat nama penerima, dan catatan verifikasi identitas (KTM/foto bukti).</li>
+            <li><strong>Backend (SerahTerimaController):</strong> Memproses data, men-generate kode <code>STR-xxx</code>, dan memicu pembaruan status barang secara otomatis ketika status serah terima dinyatakan "Selesai".</li>
+            <li><strong>Database:</strong> Record tersimpan di tabel <code>serah_terima</code> dengan relasi data ke tabel <code>barang</code>.</li>
+        </ul>
+    </div>
+
+    <h2>2. PEMENUHAN PERSYARATAN TEKNIS &amp; KEAMANAN</h2>
+    <table>
+        <tr>
+            <th>Kriteria</th>
+            <th>Penerapan pada TitikTemu</th>
+        </tr>
+        <tr>
+            <td><strong>Autentikasi &amp; Role</strong></td>
+            <td>Registrasi pengguna dengan validasi duplikasi. Login/Logout dengan verifikasi hash bcrypt serta pemisahan role Satpam dan Mahasiswa.</td>
+        </tr>
+        <tr>
+            <td><strong>Manajemen Profil</strong></td>
+            <td>Melihat data profil, mengubah nama/kontak, ganti password, serta fitur <strong>Hapus Akun Sendiri</strong> di zona bahaya dengan konfirmasi ketik "HAPUS".</td>
+        </tr>
+        <tr>
+            <td><strong>Keamanan Akses (Anti-Bypass)</strong></td>
+            <td>Middleware otentikasi memblokir akses langsung URL tanpa login. Dilengkapi header <code>Cache-Control: no-cache, no-store, must-revalidate</code> dan event <code>pageshow</code> untuk memblokir tombol Back setelah logout.</td>
+        </tr>
+        <tr>
+            <td><strong>Anti SQL Injection &amp; XSS</strong></td>
+            <td>Menggunakan Eloquent ORM &amp; PDO Prepared Statements. Seluruh output data dieksekusi melalui Blade sanitasi otomatis (anti-XSS).</td>
+        </tr>
+        <tr>
+            <td><strong>Desain Responsif &amp; Tema UB</strong></td>
+            <td>Menggunakan warna Biru Gelap Universitas Brawijaya (#003366), tombol aksi ikon SVG minimalis, dialog konfirmasi modal, dan layout adaptif desktop/mobile.</td>
+        </tr>
+    </table>
+</body>
+</html>

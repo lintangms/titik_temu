@@ -128,4 +128,26 @@ class AuthController extends Controller
 
         return back()->with('sukses', 'Profil berhasil diperbarui.');
     }
+
+    public function destroyProfile(Request $request)
+    {
+        $request->validate([
+            'konfirmasi_teks' => 'required|string',
+        ]);
+
+        if (trim($request->konfirmasi_teks) !== 'HAPUS') {
+            return back()->withErrors([
+                'konfirmasi_teks' => 'Konfirmasi penghapusan akun salah. Silakan ketik kata HAPUS dengan huruf kapital untuk melanjutkan.',
+            ]);
+        }
+
+        $user = Auth::user();
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        $user->delete();
+
+        return redirect()->route('login')->with('sukses', 'Akun Anda telah berhasil dihapus dari sistem.');
+    }
 }
