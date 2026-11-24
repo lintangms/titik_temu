@@ -130,12 +130,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="auth-link">
                 Belum punya akun? <a href="register.php">Daftar Akun Baru</a>
             </div>
-
-            <div class="info-akun">
-                <p class="info-title">Akun Demo Pengujian:</p>
-                <p><strong>Satpam (Petugas):</strong> satpam / satpam123</p>
-                <p><strong>Mahasiswa:</strong> mahasiswa / mhs123</p>
-            </div>
         </div>
     </div>
 

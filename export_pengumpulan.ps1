@@ -61,3 +61,4 @@ Write-Host $zipOutput -ForegroundColor Yellow
 $sizeMb = [math]::Round(((Get-Item $zipOutput).Length / 1MB), 2)
 Write-Host "Ukuran file: $sizeMb MB (sangat ringan, siap diunggah ke portal kuliah/BRONE)" -ForegroundColor Green
 Write-Host "=================================================================" -ForegroundColor Green
+

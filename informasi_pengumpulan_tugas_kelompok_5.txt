@@ -1,0 +1,48 @@
+====================================================================
+INFORMASI PENGUMPULAN TUGAS AKHIR PEMROGRAMAN WEB
+Nama Aplikasi : TitikTemu (Sistem Informasi Barang Hilang Kampus)
+Kelompok      : KELOMPOK 5
+====================================================================
+
+1. DAFTAR ANGGOTA KELOMPOK & PEMBAGIAN FITUR CRUD
+--------------------------------------------------------------------
+1) Nama  : Mayqi Elang Putra Gufron
+   NIM   : 255150601111003
+   Fitur : CRUD Data Barang (barang.php) & Dashboard (dashboard.php)
+
+2) Nama  : Lintang Muhammad Shiddiq
+   NIM   : 255150607111009
+   Fitur : CRUD Kategori Barang (kategori.php)
+
+3) Nama  : Rifky Achmad Arifiansyah
+   NIM   : 255150607111003
+   Fitur : CRUD Lokasi Kampus (lokasi.php)
+
+4) Nama  : Leviona Nayla Arzila
+   NIM   : 255150607111016
+   Fitur : CRUD Pengumuman (pengumuman.php)
+
+5) Nama  : Inka Nadine Chandrawinata
+   NIM   : 255150607111029
+   Fitur : CRUD Serah Terima Barang (serah-terima.php)
+
+2. KONFIGURASI DATABASE
+--------------------------------------------------------------------
+Nama Database : titiktemu
+File SQL      : database.sql (sudah mencakup struktur tabel & data awal/seeder)
+Host / User   : localhost / root (password kosong - sesuai koneksi.php)
+
+3. AKUN TESTING (UJI COBA APLIKASI)
+--------------------------------------------------------------------
+Role Satpam / Petugas (Akses penuh kelola semua fitur CRUD):
+- Username : satpam
+- Password : satpam123
+
+Role Mahasiswa / Pelapor (Portal pelaporan & informasi barang hilang):
+- Username : mahasiswa
+- Password : mhs123
+
+4. TAUTAN / URL DOMAIN HOSTING
+--------------------------------------------------------------------
+URL Aplikasi : Dijalankan secara lokal (http://localhost/titiktemu)
+====================================================================
